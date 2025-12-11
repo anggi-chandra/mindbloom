@@ -1,4 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
+import { Image } from 'expo-image';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
@@ -52,6 +53,11 @@ export default function RecommendActivitiesIntroScreen() {
                 <TouchableOpacity onPress={() => router.back()}>
                     <Ionicons name="arrow-back" size={28} color="#000" />
                 </TouchableOpacity>
+                <Image
+                    source={require('@/assets/images/logo_samping_warna.png')}
+                    style={styles.logoImage}
+                    contentFit="contain"
+                />
             </View>
 
             <View style={styles.content}>
@@ -87,6 +93,13 @@ const styles = StyleSheet.create({
     },
     header: {
         marginBottom: 20,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+    logoImage: {
+        width: 120,
+        height: 30,
     },
     content: {
         flex: 1,

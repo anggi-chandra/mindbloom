@@ -1,4 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
+import { Image } from 'expo-image';
 import { useRouter } from 'expo-router';
 import React from 'react';
 import { Dimensions, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
@@ -46,6 +47,11 @@ export default function RecommendActivitiesListScreen() {
                 <TouchableOpacity onPress={() => router.back()}>
                     <Ionicons name="arrow-back" size={28} color="#000" />
                 </TouchableOpacity>
+                <Image
+                    source={require('@/assets/images/logo_samping_warna.png')}
+                    style={styles.logoImage}
+                    contentFit="contain"
+                />
             </View>
 
             <View style={styles.titleContainer}>
@@ -55,7 +61,15 @@ export default function RecommendActivitiesListScreen() {
 
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
                 {activities.map((activity, index) => (
-                    <TouchableOpacity key={index} style={styles.card}>
+                    <TouchableOpacity
+                        key={index}
+                        style={styles.card}
+                        onPress={() => {
+                            if (activity.id === 1) {
+                                router.push('/(tabs)/calm-breath-exercise');
+                            }
+                        }}
+                    >
                         <View style={styles.iconContainer}>
                             <Ionicons name={activity.icon as any} size={32} color="#FFF" />
                         </View>
@@ -82,6 +96,13 @@ const styles = StyleSheet.create({
     header: {
         paddingHorizontal: 20,
         paddingVertical: 10,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+    logoImage: {
+        width: 120,
+        height: 30,
     },
     titleContainer: {
         paddingHorizontal: 20,

@@ -299,7 +299,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 5,
     },
     activeDot: {
-        backgroundColor: '#386641', // Dark green from design
+        backgroundColor: '#E89999', // Dark green from design
     },
     inactiveDot: {
         backgroundColor: '#D3D3D3',

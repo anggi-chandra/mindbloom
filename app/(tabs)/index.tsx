@@ -85,9 +85,12 @@ export default function HomeScreen() {
             contentFit="contain"
           />
           <View style={styles.headerOverlay}>
-            <View style={styles.logoPill}>
-              <Ionicons name="leaf-outline" size={16} color="#E89898" />
-              <Text style={styles.logoText}>Mind Bloom</Text>
+            <View style={styles.logoContainer}>
+              <Image
+                source={require('@/assets/images/logo_panjang.png')}
+                style={styles.logoImage}
+                contentFit="contain"
+              />
             </View>
 
             <Text style={styles.greetingTitle}>Take care of{'\n'}yourself</Text>
@@ -216,7 +219,7 @@ const styles = StyleSheet.create({
   },
   headerOverlay: {
     flex: 1,
-    paddingTop: 60,
+    paddingTop: 100, // Increased to push content down
     paddingHorizontal: 20,
     zIndex: 3,
   },
@@ -227,26 +230,19 @@ const styles = StyleSheet.create({
     height: 60,
     zIndex: 1,
   },
-  logoPill: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
-    alignSelf: 'center',
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    borderRadius: 20,
-    marginBottom: 30,
+  logoContainer: {
+    marginBottom: 10,
+    alignItems: 'flex-start', // Ensure left alignment
   },
-  logoText: {
-    marginLeft: 8,
-    fontWeight: '600',
-    color: '#333',
+  logoImage: {
+    width: 120,
+    height: 30,
   },
   greetingTitle: {
     fontSize: 32,
     fontWeight: 'bold',
     color: '#333',
-    marginBottom: 40,
+    marginBottom: 75,
   },
   musicPlayer: {
     flexDirection: 'row',

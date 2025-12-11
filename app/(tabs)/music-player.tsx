@@ -1,5 +1,6 @@
 import { useMusic } from '@/contexts/MusicContext';
 import { Ionicons } from '@expo/vector-icons';
+import { Image } from 'expo-image';
 import { useRouter } from 'expo-router';
 import React from 'react';
 import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
@@ -32,11 +33,12 @@ export default function MusicPlayerScreen() {
 
             <View style={styles.content}>
                 <View style={styles.albumArtContainer}>
-                    <View style={styles.albumArt}>
-                        {/* Decorative hearts would go here, simplified for now */}
-                        <Ionicons name="heart" size={40} color="#FFF" style={{ position: 'absolute', top: 20, left: 20, opacity: 0.5 }} />
-                        <Ionicons name="heart" size={60} color="#FFF" style={{ position: 'absolute', bottom: 40, right: 20, opacity: 0.5 }} />
-                    </View>
+                    <View style={styles.pinkBackground} />
+                    <Image
+                        source={require('@/assets/images/border_music_player.png')}
+                        style={styles.borderImage}
+                        contentFit="contain"
+                    />
                 </View>
 
                 <View style={styles.songDetails}>
@@ -88,20 +90,35 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     albumArtContainer: {
+        width: width * 0.7,
+        height: width * 0.7,
+        justifyContent: 'center',
+        alignItems: 'center',
         marginBottom: 40,
+        position: 'relative',
         shadowColor: '#E89898',
         shadowOffset: { width: 0, height: 10 },
         shadowOpacity: 0.3,
         shadowRadius: 20,
         elevation: 10,
     },
-    albumArt: {
-        width: width * 0.7,
-        height: width * 0.7,
+    pinkBackground: {
+        width: '68%', // Reduced size slightly
+        height: '68%',
         backgroundColor: '#E89898',
-        borderRadius: 30,
-        position: 'relative',
-        overflow: 'hidden',
+        borderRadius: 35,
+        position: 'absolute',
+        marginTop: -45, // Increased offset to move pink background higher (border appears lower)
+        // Drop shadow properties
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 10 },
+        shadowOpacity: 0.25,
+        shadowRadius: 10,
+        elevation: 10,
+    },
+    borderImage: {
+        width: '100%',
+        height: '100%',
     },
     songDetails: {
         alignItems: 'center',

@@ -112,6 +112,13 @@ export default function TabLayout() {
               headerShown: false,
             }}
           />
+          <Tabs.Screen
+            name="calm-breath-exercise"
+            options={{
+              href: null,
+              headerShown: false,
+            }}
+          />
         </Tabs>
         <FloatingMusicPlayer />
       </View>
