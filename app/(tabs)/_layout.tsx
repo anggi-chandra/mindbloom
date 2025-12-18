@@ -23,11 +23,11 @@ export default function TabLayout() {
             tabBarStyle: Platform.select({
               ios: {
                 position: 'absolute',
-                bottom: 25,
+                bottom: 0,
                 left: 20,
                 right: 20,
                 elevation: 0,
-                backgroundColor: '#FFF5F5',
+                backgroundColor: '#fadadd',
                 borderRadius: 30,
                 height: 70,
                 shadowColor: '#000',
@@ -40,11 +40,11 @@ export default function TabLayout() {
               },
               default: {
                 position: 'absolute',
-                bottom: 25,
+                bottom: 0,
                 left: 20,
                 right: 20,
                 elevation: 5,
-                backgroundColor: '#FFF5F5',
+                backgroundColor: '#fadadd',
                 borderRadius: 30,
                 height: 70,
                 borderTopWidth: 0,
@@ -72,8 +72,16 @@ export default function TabLayout() {
           <Tabs.Screen
             name="history"
             options={{
+              href: null,
+              headerShown: false,
+            }}
+          />
+          <Tabs.Screen
+            name="emotional-journal"
+            options={{
               title: 'History',
               tabBarIcon: ({ color, focused }) => <Ionicons name={focused ? "albums" : "albums-outline"} size={24} color={color} />,
+              headerShown: false,
             }}
           />
           <Tabs.Screen
@@ -114,6 +122,34 @@ export default function TabLayout() {
           />
           <Tabs.Screen
             name="calm-breath-exercise"
+            options={{
+              href: null,
+              headerShown: false,
+            }}
+          />
+
+          <Tabs.Screen
+            name="journal-list"
+            options={{
+              href: null,
+              headerShown: false,
+            }}
+          />
+          <Tabs.Screen
+            name="journal-edit"
+            options={{
+              href: null,
+              headerShown: false,
+            }}
+          />
+          <Tabs.Screen
+            name="explore"
+            options={{
+              href: null,
+            }}
+          />
+          <Tabs.Screen
+            name="sleep-tracker"
             options={{
               href: null,
               headerShown: false,

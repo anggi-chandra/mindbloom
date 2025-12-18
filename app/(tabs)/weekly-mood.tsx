@@ -100,18 +100,17 @@ export default function WeeklyMoodScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#FFF5F5', // Light pink background
+        backgroundColor: '#FFF', // Changed to white to make pink cards stand out
     },
     header: {
         paddingHorizontal: 20,
-        paddingTop: 20, // Increased padding
+        paddingTop: 20,
         paddingBottom: 10,
     },
     cardContainer: {
         alignItems: 'center',
         paddingHorizontal: 20,
         marginTop: 20,
-        // zIndex: 1, // Removed to put flowers behind recap
     },
     moodCard: {
         backgroundColor: '#FFF',
@@ -125,11 +124,10 @@ const styles = StyleSheet.create({
         shadowRadius: 10,
         elevation: 5,
         borderWidth: 1,
-        borderColor: '#FFE0E0',
-        // overflow: 'hidden', // Removed to allow floral image to be fully visible
+        borderColor: '#E89999',
     },
     emojiContainer: {
-        backgroundColor: '#FCEEA7', // Yellowish background for emoji
+        backgroundColor: '#FCEEA7',
         width: 120,
         height: 120,
         borderRadius: 60,
@@ -149,7 +147,6 @@ const styles = StyleSheet.create({
     questionContainer: {
         width: '100%',
         marginBottom: 20,
-        // zIndex: 1, // Removed as natural stacking order handles it now
     },
     questionLabel: {
         fontSize: 16,
@@ -163,21 +160,23 @@ const styles = StyleSheet.create({
     },
     floralDecoration: {
         position: 'absolute',
-        bottom: -150, // Move further down
-        left: -40, // Wider
-        right: -40, // Wider
-        height: 350, // Much taller to show more flowers
-        // zIndex: -1, // Removed, handled by JSX order
+        bottom: -150,
+        left: -40,
+        right: -40,
+        height: 350,
     },
     floralImage: {
         width: '100%',
         height: '100%',
-        opacity: 0.6, // Reduced opacity
+        opacity: 0.6,
     },
     recapContainer: {
-        flex: 1,
+        backgroundColor: '#FADADD', // Pink background for the recap card
+        borderRadius: 20,
         padding: 20,
+        marginHorizontal: 20,
         marginTop: 20,
+        marginBottom: 20,
     },
     recapTitle: {
         fontSize: 18,

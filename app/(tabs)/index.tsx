@@ -28,11 +28,11 @@ export default function HomeScreen() {
         tabBarStyle: Platform.select({
           ios: {
             position: 'absolute',
-            bottom: 25,
+            bottom: 0,
             left: 20,
             right: 20,
             elevation: 0,
-            backgroundColor: '#FFF5F5',
+            backgroundColor: '#fadadd',
             borderRadius: 30,
             height: 70,
             shadowColor: '#000',
@@ -46,11 +46,11 @@ export default function HomeScreen() {
           },
           default: {
             position: 'absolute',
-            bottom: 25,
+            bottom: 0,
             left: 20,
             right: 20,
             elevation: 5,
-            backgroundColor: '#FFF5F5',
+            backgroundColor: '#fadadd',
             borderRadius: 30,
             height: 70,
             borderTopWidth: 0,
@@ -133,8 +133,8 @@ export default function HomeScreen() {
             <View style={styles.cardTextContainer}>
               <Text style={styles.cardTitle}>Display Weekly Mood Recap</Text>
               <View style={styles.cardFooter}>
-                <Text style={styles.checkText}>Check</Text>
-                <Ionicons name="arrow-forward" size={24} color="#000" />
+                {/* <Text style={styles.checkText}>Check</Text> */}
+                {/* <Ionicons name="arrow-forward" size={24} color="#000" /> */}
               </View>
             </View>
           </TouchableOpacity>
@@ -149,18 +149,21 @@ export default function HomeScreen() {
               <Ionicons name="book-outline" size={32} color="#000" style={styles.gridIcon} />
               <Text style={styles.gridTitle}>Recommend{'\n'}Activities</Text>
               <View style={styles.cardFooter}>
-                <Text style={styles.checkText}>Check</Text>
-                <Ionicons name="arrow-forward" size={20} color="#000" />
+                {/* <Text style={styles.checkText}>Check</Text> */}
+                {/* <Ionicons name="arrow-forward" size={20} color="#000" /> */}
               </View>
             </TouchableOpacity>
 
             {/* Journal Emotions */}
-            <TouchableOpacity style={styles.gridCard}>
+            <TouchableOpacity
+              style={styles.gridCard}
+              onPress={() => router.push('/(tabs)/emotional-journal')}
+            >
               <Ionicons name="pencil-outline" size={32} color="#000" style={styles.gridIcon} />
               <Text style={styles.gridTitle}>Journal{'\n'}Emotions</Text>
               <View style={styles.cardFooter}>
-                <Text style={styles.checkText}>Check</Text>
-                <Ionicons name="arrow-forward" size={20} color="#000" />
+                {/* <Text style={styles.checkText}>Check</Text> */}
+                {/* <Ionicons name="arrow-forward" size={20} color="#000" /> */}
               </View>
             </TouchableOpacity>
 
@@ -172,18 +175,21 @@ export default function HomeScreen() {
               <Ionicons name="musical-note-outline" size={32} color="#000" style={styles.gridIcon} />
               <Text style={styles.gridTitle}>Song Playlist</Text>
               <View style={styles.cardFooter}>
-                <Text style={styles.checkText}>Check</Text>
-                <Ionicons name="arrow-forward" size={20} color="#000" />
+                {/* <Text style={styles.checkText}>Check</Text> */}
+                {/* <Ionicons name="arrow-forward" size={20} color="#000" /> */}
               </View>
             </TouchableOpacity>
 
             {/* Sleep Reminder */}
-            <TouchableOpacity style={styles.gridCard}>
+            <TouchableOpacity
+              style={styles.gridCard}
+              onPress={() => router.push('/sleep-tracker')}
+            >
               <Ionicons name="moon-outline" size={32} color="#000" style={styles.gridIcon} />
               <Text style={styles.gridTitle}>Sleep Reminder</Text>
               <View style={styles.cardFooter}>
-                <Text style={styles.checkText}>Check</Text>
-                <Ionicons name="arrow-forward" size={20} color="#000" />
+                {/* <Text style={styles.checkText}>Check</Text> */}
+                {/* <Ionicons name="arrow-forward" size={20} color="#000" /> */}
               </View>
             </TouchableOpacity>
           </View>

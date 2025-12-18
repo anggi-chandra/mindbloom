@@ -5,7 +5,7 @@ import React from 'react';
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function HistoryScreen() {
+export default function JournalListScreen() {
     const router = useRouter();
 
     // Mock data for journal entries
@@ -22,7 +22,10 @@ export default function HistoryScreen() {
             <ScrollView contentContainerStyle={styles.scrollContent}>
                 {/* Header */}
                 <View style={styles.header}>
-                    {/* Back button removed for Tab Screen */}
+                    {/* Back button added back since this is now a secondary screen */}
+                    <TouchableOpacity onPress={() => router.back()} style={styles.backButton}>
+                        <Ionicons name="arrow-back" size={24} color="#000" />
+                    </TouchableOpacity>
                     <View style={styles.logoContainer}>
                         <Image source={require('@/assets/images/logo_samping_warna.png')} style={styles.logo} resizeMode="contain" />
                     </View>
@@ -61,13 +64,7 @@ export default function HistoryScreen() {
                 </View>
             </ScrollView>
 
-            {/* Floating Action Button */}
-            <TouchableOpacity
-                style={styles.fab}
-                onPress={() => router.push('/(tabs)/emotional-journal')}
-            >
-                <Ionicons name="add" size={32} color="#FFF" />
-            </TouchableOpacity>
+
 
             {/* Background Decoration */}
             <View style={styles.backgroundDecoration} pointerEvents="none">
@@ -94,9 +91,14 @@ const styles = StyleSheet.create({
     header: {
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'flex-end', // Align logo to right or keep left? Original had space-between. Let's keep it simple.
+        justifyContent: 'space-between',
         marginTop: 10,
         marginBottom: 20,
+    },
+    backButton: {
+        padding: 8,
+        backgroundColor: '#FFF5F5',
+        borderRadius: 8,
     },
     logoContainer: {
         flexDirection: 'row',
@@ -169,21 +171,5 @@ const styles = StyleSheet.create({
         height: '100%',
         opacity: 0.3, // Lower opacity for background
     },
-    fab: {
-        position: 'absolute',
-        bottom: 20,
-        right: 20,
-        backgroundColor: '#E5989B',
-        width: 60,
-        height: 60,
-        borderRadius: 30,
-        justifyContent: 'center',
-        alignItems: 'center',
-        shadowColor: '#E5989B',
-        shadowOffset: { width: 0, height: 4 },
-        shadowOpacity: 0.3,
-        shadowRadius: 8,
-        elevation: 5,
-        zIndex: 10,
-    }
+
 });

@@ -21,6 +21,8 @@ export default function RootLayout() {
         <Stack.Screen name="recommend-activities-intro" options={{ headerShown: false }} />
         <Stack.Screen name="calm-breath-session" options={{ headerShown: false }} />
         <Stack.Screen name="calm-breath-completion" options={{ headerShown: false }} />
+        <Stack.Screen name="login" options={{ headerShown: false }} />
+        <Stack.Screen name="register" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />
